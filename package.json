@@ -11,7 +11,7 @@
     "test": "jest",
     "test:view": "jest --coverageReporters text lcov && opener ./coverage/lcov-report/index.html",
     "test:refresh": "jest --coverageReporters text lcov",
-    "test:ci": "jest --coverageReporters text cobertura json",
+    "test:ci": "jest --projects ./jest.lib.config.js --coverageReporters text cobertura json",
     "cbt": "pnpm clean && pnpm build && pnpm test",
     "postinstall": "husky install",
     "pub": "pnpm clean && pnpm build && node -r esm ./build/publish.js"
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
+    "@faker-js/faker": "^7.3.0",
     "@sabl/async-test": "^0.4.1",
     "@types/jest": "^28.1.6",
     "@types/node": "^17.0.45",

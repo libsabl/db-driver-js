@@ -4,3 +4,4 @@
 
 export * from './driver';
 export * from './row-stream';
+export * from './sql-txn';
