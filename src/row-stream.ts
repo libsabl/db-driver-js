@@ -218,13 +218,13 @@ export class RowStream extends EventEmitter implements DriverRows {
   constructor();
 
   /** Create a new cancelable row stream */
-  constructor(clr: Canceler, options?: RowStreamOptions);
+  constructor(clr: Canceler | null, options?: RowStreamOptions);
 
   /** Create new non-cancelable with the provided buffering options */
   constructor(options: RowStreamOptions);
 
   constructor(
-    clrOrOptions?: Canceler | RowStreamOptions,
+    clrOrOptions?: Canceler | RowStreamOptions | null,
     options?: RowStreamOptions
   ) {
     super();
@@ -394,7 +394,7 @@ export class RowStream extends EventEmitter implements DriverRows {
     }
 
     // Release the underlying connection
-    this.emit('complete', null, [this]);
+    this.emit('complete');
 
     const wc = this.#waitClose;
     if (wc != null) {

@@ -6,6 +6,7 @@
     "./build",
     ".eslintrc.js",
     "jest.config.js",
+    "jest.lib.config.js",
     "commitlint.config.js"
   ]
 }
